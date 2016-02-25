@@ -91,22 +91,17 @@
         </payloadFactory>
         <script language="js"><![CDATA[
 
-			var description=mc.getProperty('uri.var.description');
-			var parent=mc.getProperty('uri.var.parent');
+            var description=mc.getProperty('uri.var.description');
+            var parent=mc.getProperty('uri.var.parent');
 
-			payload = mc.getPayloadJSON();
+            payload = mc.getPayloadJSON();
 
-			if(description != null && description != ""){
-
-				payload.description=description;
-
-			}
-
-			if(parent != null && parent != ""){
-
-				payload.parent=parent;
-
-			}
+            if(description != null && description != ""){
+                payload.description=description;
+            }
+            if(parent != null && parent != ""){
+                payload.parent=parent;
+            }
 
            mc.setPayloadJSON(payload);
          ]]></script>

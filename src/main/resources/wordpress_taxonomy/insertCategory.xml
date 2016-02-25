@@ -92,12 +92,10 @@
             payload = mc.getPayloadJSON();
 
             if(description != null && description != ""){
-
                 payload.description=description;
             }
 
             if(parent != null && parent != ""){
-
                 payload.parent=parent;
             }
 
