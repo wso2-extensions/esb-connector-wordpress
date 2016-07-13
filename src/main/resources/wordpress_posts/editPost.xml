@@ -136,7 +136,6 @@
             </args>
         </payloadFactory>
         <script language="js"><![CDATA[
-
             var date=mc.getProperty('uri.var.date');
             var content=mc.getProperty('uri.var.content');
             var excerpt=mc.getProperty('uri.var.excerpt');
@@ -157,92 +156,67 @@
             var likes_enabled=mc.getProperty('uri.var.likes_enabled');
             var sharing_enabled=mc.getProperty('uri.var.sharing_enabled');
             var gplusauthorship_enabled=mc.getProperty('uri.var.gplusauthorship_enabled');
-
             payload = mc.getPayloadJSON();
-
             if(date != null && date != ""){
                 payload.date = date;
             }
-
             if(content != null && content != ""){
                 payload.content = content;
             }
-
             if(excerpt != null && excerpt != ""){
                 payload.excerpt=excerpt;
             }
-
             if(slug != null && slug != ""){
                 payload.slug=slug;
             }
-
             if(author != null && author != ""){
                 payload.slug=author;
             }
-
             if(publicize != null && publicize != ""){
                 payload.publicize=publicize;
             }
-
             if(publicize_message != null && publicize_message != ""){
                 payload.publicize_message=publicize_message;
             }
-
             if(status != null && status != ""){
                 payload.status=status;
             }
-
             if(password != null && password != ""){
                 payload.password=password;
             }
-
             if(parent != null && parent != ""){
                 payload.parent=parent;
             }
-
             if(type != null && type != ""){
                 payload.type=type;
             }
-
             if(categories != null && categories != ""){
                 payload.categories=categories;
             }
-
             if(tags != null && tags != ""){
                 payload.tags=tags;
             }
-
             if(format != null && format != ""){
                 payload.format=format;
             }
-
             if(featured_image != null && featured_image != ""){
                 payload.featured_image=featured_image;
             }
-
-
             if(comments_open != null && comments_open != ""){
                 payload.comments_open=comments_open;
             }
-
-
             if(pings_open != null && pings_open != ""){
                 payload.pings_open=pings_open;
             }
-
-
             if(likes_enabled != null && likes_enabled != ""){
                 payload.likes_enabled=likes_enabled;
             }
-
             if(sharing_enabled != null && sharing_enabled != ""){
                 payload.sharing_enabled=sharing_enabled;
             }
-
             if(gplusauthorship_enabled != null && gplusauthorship_enabled != ""){
                 payload.gplusauthorship_enabled=gplusauthorship_enabled;
             }
-
            mc.setPayloadJSON(payload);
          ]]></script>
         <property name="messageType" scope="axis2" value="application/x-www-form-urlencoded"/>
