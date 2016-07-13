@@ -29,7 +29,4 @@
             <package name="org.wso2.carbon.connector.integration.test.wordpress"/>
         </packages>
     </test>
-
 </suite>
-
-

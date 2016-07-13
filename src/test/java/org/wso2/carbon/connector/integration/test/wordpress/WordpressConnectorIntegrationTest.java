@@ -18,11 +18,6 @@
 
 package org.wso2.carbon.connector.integration.test.wordpress;
 
-import java.lang.String;
-import java.lang.System;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -30,6 +25,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.wso2.connector.integration.test.base.ConnectorIntegrationTestBase;
 import org.wso2.connector.integration.test.base.RestResponse;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Integration test class for Wordpress connector.
@@ -52,7 +50,7 @@ public class WordpressConnectorIntegrationTest extends ConnectorIntegrationTestB
     @BeforeClass(alwaysRun = true)
     public void setEnvironment() throws Exception {
 
-        init("wordpress-connector-1.0.1-SNAPSHOT");
+        init("wordpress-connector-1.0.1");
 
         esbRequestHeadersMap.put("Accept-Charset", "UTF-8");
         esbRequestHeadersMap.put("Content-Type", "application/json");
@@ -640,7 +638,7 @@ public class WordpressConnectorIntegrationTest extends ConnectorIntegrationTestB
     public void testGetPostByIdWithOptionalParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:getPostById");
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + connectorProperties.getProperty("domain") + "/posts/" + parametersMap.get("postId") + "?fields=ID,author,date,title,URL,content";
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + connectorProperties.getProperty("domain") + "/posts/" + parametersMap.get("postId") + "?pretty=true";
 
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getPostById_optional.txt", parametersMap);
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
@@ -703,7 +701,7 @@ public class WordpressConnectorIntegrationTest extends ConnectorIntegrationTestB
     public void testGetPostBySlugWithOptionalParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:getPostBySlug");
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + connectorProperties.getProperty("domain") + "/posts/slug:" + parametersMap.get("postSlug") + "?fields=slug,author,date,title,URL,content";
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + connectorProperties.getProperty("domain") + "/posts/slug:" + parametersMap.get("postSlug") + "?pretty=true";
 
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getPostBySlug_optional.txt", parametersMap);
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
@@ -1500,7 +1498,6 @@ public class WordpressConnectorIntegrationTest extends ConnectorIntegrationTestB
         Assert.assertEquals(esbRestResponse.getBody().getJSONArray("users").length(), apiRestResponse.getBody().getJSONArray("users").length());
         Assert.assertEquals(esbRestResponse.getBody().getJSONArray("users").getJSONObject(0).get("ID"), apiRestResponse.getBody().getJSONArray("users").getJSONObject(0).get("ID"));
         Assert.assertEquals(esbRestResponse.getBody().getJSONArray("users").getJSONObject(0).get("login"), apiRestResponse.getBody().getJSONArray("users").getJSONObject(0).get("login"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("users").getJSONObject(0).get("email"), apiRestResponse.getBody().getJSONArray("users").getJSONObject(0).get("email"));
     }
 
     /**

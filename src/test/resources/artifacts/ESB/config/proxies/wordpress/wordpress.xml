@@ -124,8 +124,7 @@
                         <pings_open>{$ctx:pings_open}</pings_open>
                         <likes_enabled>{$ctx:likes_enabled}</likes_enabled>
                         <sharing_enabled>{$ctx:sharing_enabled}</sharing_enabled>
-                        <gplusauthorship_enabled>{$ctx:gplusauthorship_enabled}
-                        </gplusauthorship_enabled>
+                        <gplusauthorship_enabled>{$ctx:gplusauthorship_enabled}</gplusauthorship_enabled>
                         <http_envelope>{$ctx:http_envelope}</http_envelope>
                         <pretty>{$ctx:pretty}</pretty>
                         <meta>{$ctx:meta}</meta>
@@ -155,8 +154,7 @@
                         <pings_open>{$ctx:pings_open}</pings_open>
                         <likes_enabled>{$ctx:likes_enabled}</likes_enabled>
                         <sharing_enabled>{$ctx:sharing_enabled}</sharing_enabled>
-                        <gplusauthorship_enabled>{$ctx:gplusauthorship_enabled}
-                        </gplusauthorship_enabled>
+                        <gplusauthorship_enabled>{$ctx:gplusauthorship_enabled}</gplusauthorship_enabled>
                         <http_envelope>{$ctx:http_envelope}</http_envelope>
                         <pretty>{$ctx:pretty}</pretty>
                         <meta>{$ctx:meta}</meta>
